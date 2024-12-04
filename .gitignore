@@ -1,0 +1,5 @@
+.conda
+postgre/data
+postgre/postgresql_data
+.tmp.drivedownload
+.tmp.driveupload

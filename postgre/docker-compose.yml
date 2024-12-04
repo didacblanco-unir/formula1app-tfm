@@ -1,0 +1,18 @@
+version: '3.9'
+
+volumes:
+  postgres_data:
+
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg14
+    container_name: timescaledb_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql/data
+
