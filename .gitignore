@@ -1,0 +1,11 @@
+.conda
+postgre/postgresql_data/
+postgre/postgresql_data
+python/ingesta/__pycache__
+python/ingesta/pruebas
+python/pyspark-app/.ipynb_checkpoints
+python/pyspark-app/kafka/__pycache__
+python/pyspark-app/kafka/.ipynb_checkpoints
+python/pyspark-app/kafka/pruebas
+python/pyspark-app/pruebas
+python/visual

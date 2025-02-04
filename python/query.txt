@@ -1,0 +1,173 @@
+DROP TABLE IF EXISTS car_data;
+CREATE TABLE car_data (
+  `driver_number` INTEGER,
+  `rpm` INTEGER,
+  `speed` INTEGER,
+  `n_gear` INTEGER,
+  `throttle` INTEGER,
+  `brake` INTEGER,
+  `drs` INTEGER,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS drivers;
+CREATE TABLE drivers (
+  `driver_number` INTEGER,
+  `broadcast_name` TEXT,
+  `full_name` TEXT,
+  `name_acronym` TEXT,
+  `team_name` TEXT,
+  `team_colour` TEXT,
+  `first_name` TEXT,
+  `last_name` TEXT,
+  `headshot_url` TEXT,
+  `country_code` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS intervals;
+CREATE TABLE intervals (
+  `gap_to_leader` REAL,
+  `interval` REAL,
+  `driver_number` INTEGER,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS laps;
+CREATE TABLE laps (
+  `meeting_key` INTEGER,
+  `session_key` INTEGER,
+  `driver_number` INTEGER,
+  `i1_speed` INTEGER,
+  `i2_speed` INTEGER,
+  `st_speed` INTEGER,
+  `date_start` TEXT,
+  `lap_duration` REAL,
+  `is_pit_out_lap` TEXT,
+  `duration_sector_1` REAL,
+  `duration_sector_2` REAL,
+  `duration_sector_3` REAL,
+  `segments_sector_1` TEXT,
+  `segments_sector_2` TEXT,
+  `segments_sector_3` TEXT,
+  `lap_number` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS location;
+CREATE TABLE location (
+  `x` INTEGER,
+  `y` INTEGER,
+  `z` INTEGER,
+  `driver_number` INTEGER,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS meetings;
+CREATE TABLE meetings (
+  `meeting_name` TEXT,
+  `meeting_official_name` TEXT,
+  `location` TEXT,
+  `country_key` INTEGER,
+  `country_code` TEXT,
+  `country_name` TEXT,
+  `circuit_key` INTEGER,
+  `circuit_short_name` TEXT,
+  `date_start` TEXT,
+  `gmt_offset` TEXT,
+  `meeting_key` INTEGER,
+  `year` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS pit;
+CREATE TABLE pit (
+  `pit_duration` REAL,
+  `lap_number` INTEGER,
+  `driver_number` INTEGER,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS position;
+CREATE TABLE position (
+  `position` INTEGER,
+  `driver_number` INTEGER,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS race_control;
+CREATE TABLE race_control (
+  `date` TEXT,
+  `lap_number` INTEGER,
+  `category` TEXT,
+  `flag` TEXT,
+  `scope` TEXT,
+  `driver_number` INTEGER,
+  `message` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER,
+  `sector` TEXT
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS sessions;
+CREATE TABLE sessions (
+  `location` TEXT,
+  `country_key` INTEGER,
+  `country_code` TEXT,
+  `country_name` TEXT,
+  `circuit_key` INTEGER,
+  `circuit_short_name` TEXT,
+  `session_type` TEXT,
+  `session_name` TEXT,
+  `date_start` TEXT,
+  `date_end` TEXT,
+  `gmt_offset` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER,
+  `year` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS stints;
+CREATE TABLE stints (
+  `meeting_key` INTEGER,
+  `session_key` INTEGER,
+  `stint_number` INTEGER,
+  `driver_number` INTEGER,
+  `lap_start` INTEGER,
+  `lap_end` INTEGER,
+  `compound` TEXT,
+  `tyre_age_at_start` INTEGER
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS team_radio;
+CREATE TABLE team_radio (
+  `date` TEXT,
+  `driver_number` INTEGER,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER,
+  `recording_url` TEXT
+);
+--------------------------------------------------------------------------------
+DROP TABLE IF EXISTS weather;
+CREATE TABLE weather (
+  `air_temperature` REAL,
+  `humidity` REAL,
+  `pressure` REAL,
+  `rainfall` INTEGER,
+  `track_temperature` REAL,
+  `wind_direction` INTEGER,
+  `wind_speed` REAL,
+  `date` TEXT,
+  `session_key` INTEGER,
+  `meeting_key` INTEGER
+);
+--------------------------------------------------------------------------------
