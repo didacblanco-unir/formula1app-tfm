@@ -309,7 +309,9 @@ CREATE INDEX idx_driver_number ON f1_consolidated.features (driver_number);
 -- Índice compuesto para consultas que utilicen session_key y lap_number
 CREATE INDEX idx_session_lap ON f1_consolidated.features (session_key, lap_number);
 
-
+-------------------------------------------------------------------------------
+-- 15) Tablas para la visualización en Grafana
+-------------------------------------------------------------------------------
 
 CREATE SCHEMA IF NOT EXISTS visual;
 CREATE TABLE IF NOT EXISTS circuit_points (
